@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DataLayer;
 
 namespace DEBUG_FrontEnd
 {
@@ -23,6 +24,19 @@ namespace DEBUG_FrontEnd
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnEnter_Click(object sender, RoutedEventArgs e)
+        {
+            UFOLoader input = new UFOLoader(txtDebug.Text);
+            foreach (var i in input.RawData)
+                lstDebug.Items.Add(i);
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

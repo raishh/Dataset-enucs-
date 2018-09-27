@@ -7,7 +7,7 @@ namespace DataLayer
 {
     abstract public class Loader
     {
-        private List<string> _raw_data;
+        private List<string> _raw_data = new List<string>();
         public List<string> RawData { get => _raw_data; }
 
         public Loader(string file_path)

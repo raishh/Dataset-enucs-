@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DEBUG_FrontEnd"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="408.403" Width="928.572">
     <Grid>
-        
+        <TextBox x:Name="txtDebug" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="901" Margin="10,10,0,0" TextChanged="TextBox_TextChanged" Text="C:\bin\raish\VS2017\C#\Dataset-ENUCS\Data\complete.csv"/>
+        <Button x:Name="btnEnter" Content="Enter" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="75" Click="btnEnter_Click"/>
+        <ListBox x:Name="lstDebug" HorizontalAlignment="Left" Height="304" Margin="10,63,0,0" VerticalAlignment="Top" Width="901"/>
+
     </Grid>
 </Window>
