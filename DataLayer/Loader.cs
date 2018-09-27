@@ -9,7 +9,6 @@ namespace DataLayer
     {
         private List<string> _raw_data = new List<string>();
         public List<string> RawData { get => _raw_data; }
-
         public Loader(string file_path)
         {
             var csv_reader = new StreamReader(File.OpenRead(file_path));
@@ -24,5 +23,8 @@ namespace DataLayer
                 _raw_data.Add(curr);
             }
         }
+
+
+
     }
 }
