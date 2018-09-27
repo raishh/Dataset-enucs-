@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="772.032" Width="919.248">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="310*"/>
+            <ColumnDefinition Width="601*"/>
+        </Grid.ColumnDefinitions>
+        <WebBrowser x:Name="Wb" Margin="10,137,10,0" Initialized="Wb_Initialized" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblYear" Content="Year" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="lblDay" Content="Day
+               " HorizontalAlignment="Left" Margin="197,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="lblMonth" Content="Month" HorizontalAlignment="Left" Margin="106,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="lblHour" Content="Hour
+               " HorizontalAlignment="Left" Margin="270,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="2"/>
+        <Button Content="Find" HorizontalAlignment="Left" Name="btnFind" Margin="477.046,43,0,0" VerticalAlignment="Top" Width="75" Height="29" Background="#FFA61195" FontWeight="Bold" Foreground="#FFF7F2F2" FontSize="14" Click="btnFind_Click" Grid.Column="1"/>
+        <ComboBox x:Name="cboxYear" HorizontalAlignment="Left" Margin="21,63,0,0" VerticalAlignment="Top" Width="59" Loaded="cboxYear_Loaded"/>
+        <ComboBox x:Name="cboxMonth" HorizontalAlignment="Left" Margin="106,63,0,0" VerticalAlignment="Top" Width="67" Loaded="cboxMonth_Loaded"></ComboBox>
+        <ComboBox x:Name="cboxDay" HorizontalAlignment="Left" Margin="197,63,0,0" VerticalAlignment="Top" Width="52" Loaded="cboxDay_Loaded"/>
+        <ComboBox x:Name="cboxHour" HorizontalAlignment="Left" Margin="270,63,0,0" VerticalAlignment="Top" Width="49" Grid.ColumnSpan="2" Loaded="cboxHour_Loaded"/>
+        <Label x:Name="lblShape" Content="Shape" Grid.Column="1" HorizontalAlignment="Left" Margin="84,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <ComboBox x:Name="cboxShape" Grid.Column="1" HorizontalAlignment="Left" Margin="84,63,0,0" VerticalAlignment="Top" Width="76" Loaded="cboxShape_Loaded"/>
+    </Grid>
+</Window>
