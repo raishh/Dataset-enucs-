@@ -13,3 +13,6 @@ C:\bin\raish\VS2017\C#\Dataset-ENUCS\WpfApp1\obj\Debug\FrontEnd.csproj.GenerateR
 C:\bin\raish\VS2017\C#\Dataset-ENUCS\WpfApp1\obj\Debug\FrontEnd.csproj.CoreCompileInputs.cache
 C:\bin\raish\VS2017\C#\Dataset-ENUCS\WpfApp1\obj\Debug\WpfApp1.exe
 C:\bin\raish\VS2017\C#\Dataset-ENUCS\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\bin\raish\VS2017\C#\Dataset-ENUCS\WpfApp1\bin\Debug\Backend.dll
+C:\bin\raish\VS2017\C#\Dataset-ENUCS\WpfApp1\bin\Debug\Backend.pdb
+C:\bin\raish\VS2017\C#\Dataset-ENUCS\WpfApp1\obj\Debug\FrontEnd.csproj.CopyComplete

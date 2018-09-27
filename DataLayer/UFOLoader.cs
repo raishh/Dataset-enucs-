@@ -7,8 +7,10 @@ namespace DataLayer
 {
     public class UFOLoader : Loader
     {
-        private List<string> _raw_data;
+        UFOLoader(string file_path) : base(file_path)
+        {
 
-        public UFOLoader(string file_path) : base(file_path) { }
+        }
+
     }
 }
