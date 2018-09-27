@@ -13,3 +13,6 @@ C:\Users\Hubert\Source\Repos\Dataset-ENUCS\WpfApp1\obj\Debug\FrontEnd.csproj.Gen
 C:\Users\Hubert\Source\Repos\Dataset-ENUCS\WpfApp1\obj\Debug\FrontEnd.csproj.CoreCompileInputs.cache
 C:\Users\Hubert\Source\Repos\Dataset-ENUCS\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\Hubert\Source\Repos\Dataset-ENUCS\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\Hubert\Source\Repos\Dataset-ENUCS\WpfApp1\bin\Debug\Backend.dll
+C:\Users\Hubert\Source\Repos\Dataset-ENUCS\WpfApp1\bin\Debug\Backend.pdb
+C:\Users\Hubert\Source\Repos\Dataset-ENUCS\WpfApp1\obj\Debug\FrontEnd.csproj.CopyComplete

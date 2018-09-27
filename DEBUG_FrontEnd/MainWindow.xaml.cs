@@ -32,6 +32,7 @@ namespace DEBUG_FrontEnd
             foreach (var i in input.RawData)
                 lstDebug.Items.Add(i);
 
+            //JUST TEST
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
