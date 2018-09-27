@@ -8,22 +8,23 @@
         Title="MainWindow" Height="772.032" Width="919.248">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="310*"/>
+            <ColumnDefinition Width="147*"/>
+            <ColumnDefinition Width="163*"/>
             <ColumnDefinition Width="601*"/>
         </Grid.ColumnDefinitions>
-        <WebBrowser x:Name="Wb" Margin="10,137,10,0" Initialized="Wb_Initialized" Grid.ColumnSpan="2"/>
+        <WebBrowser x:Name="Wb" Margin="10,137,10,0" Initialized="Wb_Initialized" Grid.ColumnSpan="3"/>
         <Label x:Name="lblYear" Content="Year" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <Label x:Name="lblDay" Content="Day
-               " HorizontalAlignment="Left" Margin="197,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <Label x:Name="lblMonth" Content="Month" HorizontalAlignment="Left" Margin="106,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+               " HorizontalAlignment="Left" Margin="49.853,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="lblMonth" Content="Month" HorizontalAlignment="Left" Margin="106,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="2"/>
         <Label x:Name="lblHour" Content="Hour
-               " HorizontalAlignment="Left" Margin="270,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="2"/>
-        <Button Content="Find" HorizontalAlignment="Left" Name="btnFind" Margin="477.046,43,0,0" VerticalAlignment="Top" Width="75" Height="29" Background="#FFA61195" FontWeight="Bold" Foreground="#FFF7F2F2" FontSize="14" Click="btnFind_Click" Grid.Column="1"/>
-        <ComboBox x:Name="cboxYear" HorizontalAlignment="Left" Margin="21,63,0,0" VerticalAlignment="Top" Width="59" Loaded="cboxYear_Loaded"/>
-        <ComboBox x:Name="cboxMonth" HorizontalAlignment="Left" Margin="106,63,0,0" VerticalAlignment="Top" Width="67" Loaded="cboxMonth_Loaded"></ComboBox>
-        <ComboBox x:Name="cboxDay" HorizontalAlignment="Left" Margin="197,63,0,0" VerticalAlignment="Top" Width="52" Loaded="cboxDay_Loaded"/>
-        <ComboBox x:Name="cboxHour" HorizontalAlignment="Left" Margin="270,63,0,0" VerticalAlignment="Top" Width="49" Grid.ColumnSpan="2" Loaded="cboxHour_Loaded"/>
-        <Label x:Name="lblShape" Content="Shape" Grid.Column="1" HorizontalAlignment="Left" Margin="84,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <ComboBox x:Name="cboxShape" Grid.Column="1" HorizontalAlignment="Left" Margin="84,63,0,0" VerticalAlignment="Top" Width="76" Loaded="cboxShape_Loaded"/>
+               " HorizontalAlignment="Left" Margin="122.853,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button Content="Find" HorizontalAlignment="Left" Name="btnFind" Margin="477,43,0,0" VerticalAlignment="Top" Width="75" Height="29" Background="#FFA61195" FontWeight="Bold" Foreground="#FFF7F2F2" FontSize="14" Click="btnFind_Click" Grid.Column="2"/>
+        <ComboBox x:Name="cboxYear" HorizontalAlignment="Left" Margin="21,63,0,0" VerticalAlignment="Top" Width="59" Loaded="cboxYear_Loaded" DropDownClosed="cboxYear_DropDownClosed"/>
+        <ComboBox x:Name="cboxMonth" HorizontalAlignment="Left" Margin="106,63,0,0" VerticalAlignment="Top" Width="67" Grid.ColumnSpan="2" Loaded="cboxMonth_Loaded" DropDownClosed="cboxMonth_DropDownClosed"/>
+        <ComboBox x:Name="cboxDay" HorizontalAlignment="Left" Margin="49.853,63,0,0" VerticalAlignment="Top" Width="52" Loaded="cboxDay_Loaded" Grid.Column="1"/>
+        <ComboBox x:Name="cboxHour" HorizontalAlignment="Left" Margin="122.853,63,0,0" VerticalAlignment="Top" Width="49" Grid.ColumnSpan="2" Loaded="cboxHour_Loaded" Grid.Column="1"/>
+        <Label x:Name="lblShape" Content="Shape" Grid.Column="2" HorizontalAlignment="Left" Margin="84,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <ComboBox x:Name="cboxShape" Grid.Column="2" HorizontalAlignment="Left" Margin="84,63,0,0" VerticalAlignment="Top" Width="76" Loaded="cboxShape_Loaded"/>
     </Grid>
 </Window>

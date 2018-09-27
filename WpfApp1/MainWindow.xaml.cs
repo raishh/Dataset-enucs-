@@ -33,24 +33,15 @@ namespace WpfApp1
         //Not implemented yet
         private void btnFind_Click(object sender, RoutedEventArgs e)
         {
-            
+           
            
         }
-        //Adds days to ComboBox list
-        private void cboxDay_Loaded(object sender, RoutedEventArgs e)
+        //Adds years to ComboBox list
+        private void cboxYear_Loaded(object sender, RoutedEventArgs e)
         {
-            for(int i = 1; i <= 31; i++)
+            for (int i = 1906; i <= 2013; i++)
             {
-                cboxDay.Items.Add(i);
-            }
-                       
-        }
-        //Adds hours to ComboBox list
-        private void cboxHour_Loaded(object sender, RoutedEventArgs e)
-        {
-            for (int i = 1; i <= 24; i++)
-            {
-                cboxHour.Items.Add(i);
+                cboxYear.Items.Add(i);
             }
         }
         //Adds months to ComboBox list
@@ -61,18 +52,71 @@ namespace WpfApp1
                 cboxMonth.Items.Add(i);
             }
         }
-        //Adds years to ComboBox list
-        private void cboxYear_Loaded(object sender, RoutedEventArgs e)
+        
+        //Adds default days to ComboBox list
+        private void cboxDay_Loaded(object sender, RoutedEventArgs e)
         {
-            for (int i = 1906; i <= 2013; i++)
+            
+            for (int i = 1; i <= 31; i++)
             {
-                cboxYear.Items.Add(i);
+                cboxDay.Items.Add(i);
+            }
+                       
+        }
+
+        //Adds hours to ComboBox list
+        private void cboxHour_Loaded(object sender, RoutedEventArgs e)
+        {
+            for (int i = 1; i <= 24; i++)
+            {
+                cboxHour.Items.Add(i);
             }
         }
+        
+        
         //Not implemented yet
         private void cboxShape_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+        //Change number of days for each month        
+        private void cboxMonth_DropDownClosed(object sender, EventArgs e)
+        {
+            dayChange(cboxMonth.Text, cboxYear.Text);
+        }
+        //Change number of days for each month taking into account every 4th year
+        private void cboxYear_DropDownClosed(object sender, EventArgs e)
+        {
+            dayChange(cboxMonth.Text, cboxYear.Text);
+        }
+        //Delete all items from Day ComboBox and populate it from 1 to x
+        //Where x depends on month and year
+        private void dayChange(string month, string year)
+        {
+            cboxDay.Items.Clear();
+            int temp = 0;
+            if (month == "1" || month == "3" || month == "5" || month == "7" || month == "8" || month == "10" || month == "12")
+            {
+                temp = 31;
+            }
+            else if (month == "4" || month == "6" || month == "9" || month == "11")
+            {
+                temp = 30;
+            }
+            else if (month == "2" && (String.IsNullOrEmpty(year) || Convert.ToInt32(year) % 4 != 0))
+            {
+                temp = 28;
+            }
+            else
+            {
+                temp = 29;
+            }
+
+
+            for (int i = 1; i <= temp; i++)
+            {
+                cboxDay.Items.Add(i);
+            }
         }
     }
 }
