@@ -17,6 +17,7 @@ namespace DataLayer
             if (csv_reader == null)
                 throw new ArgumentNullException("File Path");
 
+            csv_reader.ReadLine();
             while (!csv_reader.EndOfStream)
             {
                 string curr = csv_reader.ReadLine();
