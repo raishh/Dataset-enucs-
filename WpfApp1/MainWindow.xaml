@@ -26,6 +26,5 @@
         <ComboBox x:Name="cboxHour" HorizontalAlignment="Left" Margin="122.853,63,0,0" VerticalAlignment="Top" Width="49" Grid.ColumnSpan="2" Loaded="cboxHour_Loaded" Grid.Column="1"/>
         <Label x:Name="lblShape" Content="Shape" Grid.Column="2" HorizontalAlignment="Left" Margin="84,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <ComboBox x:Name="cboxShape" Grid.Column="2" HorizontalAlignment="Left" Margin="84,63,0,0" VerticalAlignment="Top" Width="76" Loaded="cboxShape_Loaded"/>
-        <Button x:Name="test" Content="Button" Grid.Column="2" HorizontalAlignment="Left" Margin="308,85,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
