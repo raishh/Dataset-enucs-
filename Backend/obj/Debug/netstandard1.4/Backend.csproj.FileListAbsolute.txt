@@ -1,8 +1,0 @@
-C:\bin\raish\VS2017\C#\Dataset-ENUCS\Backend\bin\Debug\netstandard1.4\Backend.deps.json
-C:\bin\raish\VS2017\C#\Dataset-ENUCS\Backend\bin\Debug\netstandard1.4\Backend.dll
-C:\bin\raish\VS2017\C#\Dataset-ENUCS\Backend\bin\Debug\netstandard1.4\Backend.pdb
-C:\bin\raish\VS2017\C#\Dataset-ENUCS\Backend\obj\Debug\netstandard1.4\Backend.csprojAssemblyReference.cache
-C:\bin\raish\VS2017\C#\Dataset-ENUCS\Backend\obj\Debug\netstandard1.4\Backend.csproj.CoreCompileInputs.cache
-C:\bin\raish\VS2017\C#\Dataset-ENUCS\Backend\obj\Debug\netstandard1.4\Backend.AssemblyInfo.cs
-C:\bin\raish\VS2017\C#\Dataset-ENUCS\Backend\obj\Debug\netstandard1.4\Backend.dll
-C:\bin\raish\VS2017\C#\Dataset-ENUCS\Backend\obj\Debug\netstandard1.4\Backend.pdb
