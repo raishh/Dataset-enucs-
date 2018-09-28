@@ -30,9 +30,7 @@ namespace DEBUG_FrontEnd
         {
             UFOLoader input = new UFOLoader(txtDebug.Text);
             foreach (var entry in input.UFOData)
-            {
-
-            }
+                lstDebug.Items.Add(entry.ToString());
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

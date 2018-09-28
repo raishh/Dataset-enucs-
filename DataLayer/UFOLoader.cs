@@ -38,10 +38,8 @@ namespace DataLayer
             foreach (var e in processed_data)
             {
                 if (e[9] == "0") continue;
-                UFOData.Add(new UFO(e[0], e[4], e[5], Double.Parse(e[9]), Double.Parse(e[10])));
+                try { UFOData.Add(new UFO(e[0], e[4], e[5], Double.Parse(e[9]), Double.Parse(e[10]))); } catch { }
             }
-
-
         }
 
     }
