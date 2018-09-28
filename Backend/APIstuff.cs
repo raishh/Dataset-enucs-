@@ -1,4 +1,6 @@
 ﻿using System;
+using Google.Maps;
+using System.IO;
 
 namespace Backend
 {
@@ -6,6 +8,8 @@ namespace Backend
     {
         public static void UFORequest()
         {
+            string path = System.IO.Directory.GetCurrentDirectory() + @"/KEY.txt";
+            string key = System.IO.File.ReadAllText(path);
         }
     }
 }

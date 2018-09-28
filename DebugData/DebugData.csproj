@@ -111,6 +111,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Backend\Backend.csproj">
+      <Project>{5c96c325-5d02-420c-97d7-2de3e2ea4223}</Project>
+      <Name>Backend</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
       <Project>{5f844708-3f10-48a7-8071-5fca8e541ac7}</Project>
       <Name>DataLayer</Name>
