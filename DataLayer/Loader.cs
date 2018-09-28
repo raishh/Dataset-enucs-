@@ -7,8 +7,9 @@ namespace DataLayer
 {
     abstract public class Loader
     {
-        private List<string> _raw_data = new List<string>();
-        public List<string> RawData { get => _raw_data; }
+        protected List<string> raw_data = new List<string>();
+        protected List<string[]> processed_data = new List<string[]>();
+
         public Loader(string file_path)
         {
             var csv_reader = new StreamReader(File.OpenRead(file_path));
@@ -20,11 +21,12 @@ namespace DataLayer
             while (!csv_reader.EndOfStream)
             {
                 string curr = csv_reader.ReadLine();
-                _raw_data.Add(curr);
+                raw_data.Add(curr);
             }
+
+            foreach (var e in raw_data)
+                processed_data.Add(e.Split(','));
         }
-
-
 
     }
 }
