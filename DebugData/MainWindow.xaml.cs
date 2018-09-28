@@ -22,6 +22,7 @@ namespace DEBUG_FrontEnd
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,15 +30,22 @@ namespace DEBUG_FrontEnd
 
         private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
-            UFOLoader input = new UFOLoader(txtDebug.Text);
-            foreach (var entry in input.UFOData)
+            App.input = new UFOLoader(txtDebug.Text);
+            foreach (var entry in App.input.UFOData)
                 lstDebug.Items.Add(entry.ToString());
 
+            btnMap.Visibility = Visibility.Visible;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void btnMap_Click(object sender, RoutedEventArgs e)
+        {
+            Map win = new Map();
+            win.Show();
         }
     }
 }

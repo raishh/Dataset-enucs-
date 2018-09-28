@@ -7,10 +7,10 @@ namespace Backend
     public class APIstuff
     {
         //static method for a map api request, specfically for a UFO sighting list
-        public static string UFORequest()
+        public static string KeyRequest()
         {
-
-            return "hello";
+            string path = Directory.GetCurrentDirectory()+@"/KEY.txt";
+            return File.ReadAllText(path);
         }
     }
 }
