@@ -11,14 +11,16 @@ namespace DataLayer
         public string date_spotted;
         public string shape;
         public string duration;
+        public string comment;
         public double latitude;
         public double longitude;
 
-        public UFO(string date_spotted, string shape, string duration, double latitude, double longitude)
+        public UFO(string date_spotted, string shape, string duration, string comment, double latitude, double longitude)
         {
             this.date_spotted = date_spotted;
             this.shape = shape;
             this.duration = duration;
+            this.comment = comment;
             this.latitude = latitude;
             this.longitude = longitude;
         }
@@ -41,7 +43,7 @@ namespace DataLayer
             foreach (var e in processed_data)
             {
                 if (e[9] == "0") continue;
-                try { UFOData.Add(new UFO(e[0], e[4], e[5], Double.Parse(e[9]), Double.Parse(e[10]))); } catch { }
+                try { UFOData.Add(new UFO(e[0], e[4], e[5], e[7], Double.Parse(e[9]), Double.Parse(e[10]))); } catch { }
             }
         }
 

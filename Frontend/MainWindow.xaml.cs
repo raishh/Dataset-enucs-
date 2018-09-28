@@ -39,7 +39,7 @@ namespace WpfApp1
             {
                 cboxYear.Items.Add(i);
             }
-            cboxHour.Items.Add("null");
+            cboxYear.Items.Add("null");
         }
         //Adds months to ComboBox list
         private void cboxMonth_Loaded(object sender, RoutedEventArgs e)
@@ -48,7 +48,7 @@ namespace WpfApp1
             {
                 cboxMonth.Items.Add(i);
             }
-            cboxHour.Items.Add("null");
+            cboxMonth.Items.Add("null");
         }
         
         //Adds default days to ComboBox list
@@ -73,10 +73,10 @@ namespace WpfApp1
         }
         
         
-        //Not implemented yet
+        //Partly implemented
         private void cboxShape_Loaded(object sender, RoutedEventArgs e)
         {
-            cboxHour.Items.Add("null");
+            cboxShape.Items.Add("null");
         }
         //Change number of days for each month        
         private void cboxMonth_DropDownClosed(object sender, EventArgs e)
@@ -87,6 +87,7 @@ namespace WpfApp1
         //Change number of days for each month taking into account every 4th year
         private void cboxYear_DropDownClosed(object sender, EventArgs e)
         {
+            
             dayChange(cboxMonth.Text, cboxYear.Text);
         }
         //Delete all items from Day ComboBox and populate it from 1 to temp
@@ -117,7 +118,7 @@ namespace WpfApp1
             {
                 cboxDay.Items.Add(i);
             }
-            cboxHour.Items.Add("null");
+            cboxDay.Items.Add("null");
         }
     }
 }
