@@ -29,10 +29,10 @@ namespace DEBUG_FrontEnd
         private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
             UFOLoader input = new UFOLoader(txtDebug.Text);
-            foreach (var i in input.RawData)
-                lstDebug.Items.Add(i);
+            foreach (var entry in input.UFOData)
+            {
 
-            //JUST TEST
+            }
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
