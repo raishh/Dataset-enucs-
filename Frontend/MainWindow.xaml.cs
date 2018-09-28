@@ -25,11 +25,7 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-        
-        private void Wb_Initialized(object sender, EventArgs e)
-        {
-            Wb.Navigate("https://www.google.co.in/maps");
-        }
+
         //Not implemented yet
         private void btnFind_Click(object sender, RoutedEventArgs e)
         {

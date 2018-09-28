@@ -12,7 +12,6 @@
             <ColumnDefinition Width="163*"/>
             <ColumnDefinition Width="601*"/>
         </Grid.ColumnDefinitions>
-        <WebBrowser x:Name="Wb" Margin="10,137,10,0" Initialized="Wb_Initialized" Grid.ColumnSpan="3"/>
         <Label x:Name="lblYear" Content="Year" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <Label x:Name="lblDay" Content="Day
                " HorizontalAlignment="Left" Margin="49.853,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Grid.Column="1"/>
