@@ -26,6 +26,7 @@ namespace DataLayer
 
             foreach (var e in raw_data)
                 processed_data.Add(e.Split(','));
+
         }
 
     }
