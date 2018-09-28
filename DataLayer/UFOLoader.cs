@@ -5,6 +5,7 @@ using System.IO;
 
 namespace DataLayer
 {
+    //UFO class for storing detail per each sighting
     public class UFO
     {
         public string date_spotted;
@@ -29,12 +30,14 @@ namespace DataLayer
 
     }
 
+    //Child Class of Loader, UFOLoader, specifically for loading UFO csv
     public class UFOLoader : Loader
     {
         public List<UFO> UFOData { get; } = new List<UFO>();
 
         public UFOLoader(string file_path) : base(file_path)
         {
+            //if the sighting has a valid location then push it onto a list of UFO Sightings
             foreach (var e in processed_data)
             {
                 if (e[9] == "0") continue;

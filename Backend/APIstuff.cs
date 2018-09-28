@@ -1,15 +1,16 @@
 ﻿using System;
-using Google.Maps;
 using System.IO;
 
 namespace Backend
 {
+    //Class for API interaction
     public class APIstuff
     {
-        public static void UFORequest()
+        //static method for a map api request, specfically for a UFO sighting list
+        public static string UFORequest()
         {
-            string path = System.IO.Directory.GetCurrentDirectory() + @"/KEY.txt";
-            string key = System.IO.File.ReadAllText(path);
+
+            return "hello";
         }
     }
 }
