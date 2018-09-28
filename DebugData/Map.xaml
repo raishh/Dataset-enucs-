@@ -8,7 +8,6 @@
         mc:Ignorable="d"
         Title="Map" Height="450" Width="800">
     <Grid>
- 
-        <m:Map x:Name="myMap" />
+        <m:Map x:Name="myMap" Mode="AerialWithLabels"/>
     </Grid>
 </Window>
