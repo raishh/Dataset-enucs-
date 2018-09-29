@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Backend;
+using Microsoft.Maps.MapControl.WPF;
 
 namespace DEBUG_FrontEnd
 {
@@ -22,6 +23,19 @@ namespace DEBUG_FrontEnd
         {
             InitializeComponent();
             myMap.CredentialsProvider = new Microsoft.Maps.MapControl.WPF.ApplicationIdCredentialsProvider(APIstuff.KeyRequest());
+            myMap.Focus();
+
+            for (int i = 0; i < (App.input.UFOData.Count)/20; i++)
+            {
+                Location loc = new Location();
+                Pushpin pin = new Pushpin();
+                loc.Latitude = App.input.UFOData[i].latitude;
+                loc.Longitude = App.input.UFOData[i].longitude;
+                pin.Location = loc;
+
+                myMap.Children.Add(pin);
+            }
         }
     }
 }
+
