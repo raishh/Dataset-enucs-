@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
@@ -6,23 +6,19 @@ using System.IO;
 namespace DataLayer
 {
     //UFO class for storing detail per each sighting
-    public class UFO
+    public class UFO : Point
     {
         public string date_spotted;
         public string shape;
         public string duration;
         public string comment;
-        public double latitude;
-        public double longitude;
 
-        public UFO(string date_spotted, string shape, string duration, string comment, double latitude, double longitude)
+        public UFO(string date_spotted, string shape, string duration, string comment, double latitude, double longitude) : base (latitude, longitude)
         {
             this.date_spotted = date_spotted;
             this.shape = shape;
             this.duration = duration;
             this.comment = comment;
-            this.latitude = latitude;
-            this.longitude = longitude;
         }
 
         public override string ToString()

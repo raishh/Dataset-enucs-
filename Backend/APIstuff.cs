@@ -1,5 +1,7 @@
-﻿using System;
+using System;
 using System.IO;
+using DataLayer;
+using Microsoft.Maps.MapControl.WPF;
 using System.Collections.Generic;
 using DataLayer;
 
@@ -9,10 +11,10 @@ namespace Backend
     public class APIstuff
     {
         //static method for a map api request, specfically for a UFO sighting list
-        public static string UFORequest()
+        public static string KeyRequest()
         {
-
-            return "hello";
+            string path = Directory.GetCurrentDirectory()+@"/KEY.txt";
+            return File.ReadAllText(path);
         }
 
         //NEW STUFF BELOW

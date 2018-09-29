@@ -4,4 +4,10 @@
     <TargetFramework>netstandard1.4</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="Microsoft.Maps.MapControl.WPF">
+      <HintPath>..\Microsoft.Maps.MapControl.WPF.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
