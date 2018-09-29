@@ -42,7 +42,7 @@ namespace DataLayer
             //if the sighting has a valid location then push it onto a list of UFO Sightings
             foreach (var e in processed_data)
             {
-                if (e[9] == "0") continue;
+                if (e[9] == "0" || !e[0].Contains("/")) continue;
                 try { UFOData.Add(new UFO(e[0], e[4], e[5], e[7], Double.Parse(e[9]), Double.Parse(e[10]))); } catch { }
             }
         }

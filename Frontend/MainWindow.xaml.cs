@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 
+
 namespace WpfApp1
 {
     /// <summary>
@@ -25,22 +26,22 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-
+        
         //Not implemented yet
         private void btnFind_Click(object sender, RoutedEventArgs e)
         {
-           
-           
+            
+
         }
         //Adds years to ComboBox list
         private void cboxYear_Loaded(object sender, RoutedEventArgs e)
         {
-            for (int i = 1906; i <= 2013; i++)
+            for (int i = 1906; i <= 2014; i++)
             {
                 cboxYear.Items.Add(i);
             }
-            cboxYear.Items.Add("null");
-            cboxYear.Text = "null";
+            cboxYear.Items.Add("All");
+            
         }
         //Adds months to ComboBox list
         private void cboxMonth_Loaded(object sender, RoutedEventArgs e)
@@ -49,8 +50,8 @@ namespace WpfApp1
             {
                 cboxMonth.Items.Add(i);
             }
-            cboxMonth.Items.Add("null");
-            cboxMonth.Text = "null";
+            cboxMonth.Items.Add("All");
+            
         }
         
         //Adds default days to ComboBox list
@@ -61,8 +62,8 @@ namespace WpfApp1
             {
                 cboxDay.Items.Add(i);
             }
-            cboxDay.Items.Add("null");
-            cboxDay.Text = "null";
+            cboxDay.Items.Add("All");
+            
 
         }
 
@@ -73,28 +74,39 @@ namespace WpfApp1
             {
                 cboxHour.Items.Add(i);
             }
-            cboxHour.Items.Add("null");
-            cboxHour.Text = "null";
+            cboxHour.Items.Add("All");
+            
         }
-        
-        
+                
         //Partly implemented
         private void cboxShape_Loaded(object sender, RoutedEventArgs e)
         {
-            cboxShape.Items.Add("null");
-            cboxShape.Text = "null";
+            cboxShape.Items.Add("All");
+            
         }
+
+        
+        
         //Change number of days for each month        
         private void cboxMonth_DropDownClosed(object sender, EventArgs e)
         {
             dayChange(cboxMonth.Text, cboxYear.Text);
             
         }
-        //Change number of days for each month taking into account every 4th year
-        private void cboxYear_DropDownClosed(object sender, EventArgs e)
+        
+        private void cboxDay_DropDownClosed(object sender, EventArgs e)
         {
-            
-            dayChange(cboxMonth.Text, cboxYear.Text);
+
+        }
+
+        private void cboxHour_DropDownClosed(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboxShape_DropDownClosed(object sender, EventArgs e)
+        {
+
         }
         //Delete all items from Day ComboBox and populate it from 1 to temp
         //Where temp depends on month and year
@@ -124,9 +136,8 @@ namespace WpfApp1
             {
                 cboxDay.Items.Add(i);
             }
-            cboxDay.Items.Add("null");
+            cboxDay.Items.Add("All");
         }
-
         
     }
 }
