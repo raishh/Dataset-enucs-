@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Backend;
 
 
 
@@ -81,12 +82,22 @@ namespace WpfApp1
         //Partly implemented
         private void cboxShape_Loaded(object sender, RoutedEventArgs e)
         {
+            List<string> shapes = APIstuff.Shapes();
+            foreach (string shape in shapes)
+            {
+                cboxShape.Items.Add(shape);
+            }
             cboxShape.Items.Add("All");
             
         }
 
-        
-        
+        //Change number of days for each month        
+        private void cboxYear_DropDownClosed(object sender, EventArgs e)
+        {
+            dayChange(cboxMonth.Text, cboxYear.Text);
+
+        }
+
         //Change number of days for each month        
         private void cboxMonth_DropDownClosed(object sender, EventArgs e)
         {

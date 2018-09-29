@@ -51,11 +51,27 @@ namespace Backend
                 }
                 temp = item;
                 temp.date_spotted = tempArr[0] + "/" + tempArr[1] + "/" + tempArr[2]+" "+tempArr[3];
+
+                if (item.shape.Equals(""))
+                {
+                    temp.shape = "unknown";
+                }
                 dataCopy.Add(temp);
             }
             dataCopy.Sort((x, y) => x.date_spotted.CompareTo(y.date_spotted));
         }
-       
+        public static List<string> Shapes()
+        {
+            List<string> shapes = new List<string>();
+            foreach (var item in dataCopy)
+            {
+                if (!shapes.Contains(item.shape))
+                {
+                    shapes.Add(item.shape);
+                }
+            }
+            return shapes;
+        }
         
 
         
