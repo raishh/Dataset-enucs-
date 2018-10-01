@@ -15,21 +15,21 @@ using System.Windows.Shapes;
 using Backend;
 using DataLayer;
 using Microsoft.Maps.MapControl.WPF;
-
+using System.IO;
 
 
 namespace WpfApp1
 {
     public partial class MainWindow : Window
     {
-        private UFOLoader data;
+        private static List<UFO> data;
 
         public MainWindow()
         {
             InitializeComponent();
             myMap.CredentialsProvider = new Microsoft.Maps.MapControl.WPF.ApplicationIdCredentialsProvider(Backend.BackendStuff.KeyRequest());
             myMap.Focus();
-
+            data = BackendStuff.IntializeUFO(Directory.GetCurrentDirectory()+@"/scrubbed.csv");
         }
         
         private void btnFind_Click(object sender, RoutedEventArgs e)
@@ -84,7 +84,7 @@ namespace WpfApp1
         //Partly implemented
         private void cboxShape_Loaded(object sender, RoutedEventArgs e)
         {
-            List<string> shapes = BackendStuff.Shapes(data.UFOData);
+            List<string> shapes = BackendStuff.Shapes();
             foreach (string shape in shapes)
             {
                 cboxShape.Items.Add(shape);
