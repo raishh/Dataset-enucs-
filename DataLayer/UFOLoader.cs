@@ -36,12 +36,38 @@ namespace DataLayer
         public UFOLoader(string file_path) : base(file_path)
         {
             //if the sighting has a valid location then push it onto a list of UFO Sightings
-            foreach (var e in processed_data)
+            foreach (string[] e in processed_data)
             {
                 if (e[9] == "0" || !e[0].Contains("/")) continue;
                 try { UFOData.Add(new UFO(e[0], e[4], e[5], e[7], Double.Parse(e[9]), Double.Parse(e[10]))); } catch { }
             }
-        }
 
+            string[] tempArr;
+            string swap;
+
+            foreach (UFO item in UFOData)
+            {
+                tempArr = item.date_spotted.Split('/', ' ');
+
+                swap = tempArr[0];
+                tempArr[0] = tempArr[2];
+                tempArr[2] = swap;
+
+                swap = tempArr[1];
+                tempArr[1] = tempArr[2];
+                tempArr[2] = swap;
+
+                if (tempArr[2].StartsWith("0"))
+                    tempArr[2] = Convert.ToString(Convert.ToInt32(tempArr[2]));
+                if (tempArr[1].StartsWith("0"))
+                    tempArr[1] = Convert.ToString(Convert.ToInt32(tempArr[1]));
+
+                item.date_spotted = tempArr[0] + "/" + tempArr[1] + "/" + tempArr[2] + " " + tempArr[3];
+
+                if (item.shape.Equals(""))
+                    item.shape = "unknown";
+            }
+             UFOData.Sort((x, y) => x.date_spotted.CompareTo(y.date_spotted));
+        }
     }
 }

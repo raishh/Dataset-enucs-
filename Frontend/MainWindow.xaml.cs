@@ -82,12 +82,14 @@ namespace WpfApp1
         //Partly implemented
         private void cboxShape_Loaded(object sender, RoutedEventArgs e)
         {
-            List<string> shapes = APIstuff.Shapes();
+            /**
+            List<string> shapes = Shapes();
             foreach (string shape in shapes)
             {
                 cboxShape.Items.Add(shape);
             }
             cboxShape.Items.Add("All");
+            **/
             
         }
 
