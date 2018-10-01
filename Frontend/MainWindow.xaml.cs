@@ -22,14 +22,20 @@ namespace WpfApp1
 {
     public partial class MainWindow : Window
     {
-        private static List<UFO> data;
+        public static List<UFO> data;
 
         public MainWindow()
         {
             InitializeComponent();
             myMap.CredentialsProvider = new Microsoft.Maps.MapControl.WPF.ApplicationIdCredentialsProvider(Backend.BackendStuff.KeyRequest());
             myMap.Focus();
-            data = BackendStuff.IntializeUFO(Directory.GetCurrentDirectory()+@"/scrubbed.csv");
+            App.ufo_path = Directory.GetCurrentDirectory() + @"/scrubbed.csv";
+            try { data = BackendStuff.IntializeUFO(App.ufo_path); }
+            catch
+            {
+                FilePathWin verifyWindow = new FilePathWin();
+                verifyWindow.Show();
+            }
         }
         
         private void btnFind_Click(object sender, RoutedEventArgs e)

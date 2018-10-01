@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Backend;
 
 namespace WpfApp1
 {
@@ -22,6 +23,24 @@ namespace WpfApp1
         public FilePathWin()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            App.ufo_path = txtBx.Text;
+            try { MainWindow.data = BackendStuff.IntializeUFO(App.ufo_path); }
+            catch
+            {
+                MessageBox.Show("Invalid path");
+                return;
+            }
+
+            Close();
         }
     }
 }
