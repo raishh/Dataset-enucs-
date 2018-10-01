@@ -16,7 +16,7 @@ namespace Backend
             string path = Directory.GetCurrentDirectory()+@"/KEY.txt";
             return File.ReadAllText(path);
         }
-        
+
         public static List<string> Shapes(List<UFO> dataCopy)
         {
             List<string> shapes = new List<string>();
@@ -28,5 +28,7 @@ namespace Backend
 
             return shapes;
         }
+
+
     }
 }
