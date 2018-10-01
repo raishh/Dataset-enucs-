@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace Backend
 {
     //Class for API interaction
-    public static class Backend
+    public static class BackendStuff
     {
 
         //static method for a map api request, specfically for a UFO sighting list

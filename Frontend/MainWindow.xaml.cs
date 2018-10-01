@@ -13,21 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Backend;
+using DataLayer;
 using Microsoft.Maps.MapControl.WPF;
 
 
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private UFOLoader data;
+
         public MainWindow()
         {
             InitializeComponent();
-            myMap.CredentialsProvider = new Microsoft.Maps.MapControl.WPF.ApplicationIdCredentialsProvider(Backend.Backend.KeyRequest());
+            myMap.CredentialsProvider = new Microsoft.Maps.MapControl.WPF.ApplicationIdCredentialsProvider(Backend.BackendStuff.KeyRequest());
             myMap.Focus();
 
         }
@@ -84,15 +84,12 @@ namespace WpfApp1
         //Partly implemented
         private void cboxShape_Loaded(object sender, RoutedEventArgs e)
         {
-            /**
-            List<string> shapes = Shapes();
+            List<string> shapes = BackendStuff.Shapes(data.UFOData);
             foreach (string shape in shapes)
             {
                 cboxShape.Items.Add(shape);
             }
             cboxShape.Items.Add("All");
-            **/
-            
         }
 
         //Change number of days for each month        

@@ -22,7 +22,7 @@ namespace DEBUG_FrontEnd
         public Map()
         {
             InitializeComponent();
-            myMap.CredentialsProvider = new Microsoft.Maps.MapControl.WPF.ApplicationIdCredentialsProvider(Backend.Backend.KeyRequest());
+            myMap.CredentialsProvider = new Microsoft.Maps.MapControl.WPF.ApplicationIdCredentialsProvider(Backend.BackendStuff.KeyRequest());
             myMap.Focus();
 
             for (int i = 0; i < (App.input.UFOData.Count)/20; i++)
