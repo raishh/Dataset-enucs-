@@ -34,7 +34,7 @@ namespace Backend
             foreach (var e in list)
                 dt.Add(e.date_spotted);
 
-            int midIndex = dt.BinarySearch(dateDt);
+            int midIndex = dt.BinarySearch(dateDt.Date);
             bool rollBack = true;
             bool rollForward = true;
             int si = midIndex - 1;
@@ -56,7 +56,7 @@ namespace Backend
             {
                 if (si < 0)
                     rollBack = false;
-                else if (dt[si] != dt[midIndex])
+                else if (dt[si].Date != dt[midIndex].Date)
                     rollBack = false;
                 else
                 {
@@ -69,7 +69,7 @@ namespace Backend
             {
                 if (ei > max)
                     rollForward = false;
-                else if (dt[ei] != dt[midIndex])
+                else if (dt[ei].Date != dt[midIndex].Date)
                     rollForward = false;
                 else
                 {
