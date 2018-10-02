@@ -93,17 +93,7 @@ namespace WpfApp1
 
         }
 
-        //Adds hours to ComboBox list
-        private void cboxHour_Loaded(object sender, RoutedEventArgs e)
-        {
-            for (int i = 1; i <= 24; i++)
-            {
-                cboxHour.Items.Add(i);
-            }
-            cboxHour.Items.Add("All");
-            
-        }
-                
+                        
         //Partly implemented
         private void cboxShape_Loaded(object sender, RoutedEventArgs e)
         {
@@ -131,11 +121,7 @@ namespace WpfApp1
         {
 
         }
-
-        private void cboxHour_DropDownClosed(object sender, EventArgs e)
-        {
-
-        }
+               
 
         private void cboxShape_DropDownClosed(object sender, EventArgs e)
         {
