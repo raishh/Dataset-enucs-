@@ -39,7 +39,7 @@ namespace WpfApp1
                 MessageBox.Show("Invalid path");
                 return;
             }
-
+            
             Close();
         }
     }

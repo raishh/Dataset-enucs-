@@ -37,11 +37,12 @@ namespace WpfApp1
                 verifyWindow.Show();
             }
         }
-        
+
         private void btnFind_Click(object sender, RoutedEventArgs e)
         {
-
+            BackendStuff.FindDateUFO(data, "10", "10", "1949");
         }
+
         //Adds years to ComboBox list
         private void cboxYear_Loaded(object sender, RoutedEventArgs e)
         {
