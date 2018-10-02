@@ -130,18 +130,8 @@ namespace WpfApp1
         {
             dayChange(cboxMonth.Text, cboxYear.Text);
         }
+                         
         
-        private void cboxDay_DropDownClosed(object sender, EventArgs e)
-        {
-
-        }
-               
-
-        private void cboxShape_DropDownClosed(object sender, EventArgs e)
-        {
-
-        }
-
         //Delete all items from Day ComboBox and populate it from 1 to temp
         //Where temp depends on month and year
         private void dayChange(string month, string year)
@@ -172,5 +162,7 @@ namespace WpfApp1
         private void cboxShape_ContextMenuClosing(object sender, ContextMenuEventArgs e)
         {
         }
+
+        
     }
 }
