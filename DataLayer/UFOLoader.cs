@@ -43,10 +43,7 @@ namespace DataLayer
                 if (e[9] == "0" || !e[0].Contains("/")) continue;
                 if (e[4].Equals("")) e[4] = "unknown";
 
-                string[] temp = e[0].Split(' ');
-                e[0] = temp[0];
-
-                try { UFOData.Add(new UFO(DateTime.ParseExact(e[0], "MM/dd/yyyy", CultureInfo.InvariantCulture), e[4], e[5], e[7], Double.Parse(e[9]), Double.Parse(e[10]))); } catch { }
+                try { UFOData.Add(new UFO(DateTime.Parse(e[0], culture), e[4], e[5], e[7], Double.Parse(e[9]), Double.Parse(e[10]))); } catch { }
             }
 
              UFOData.Sort((x, y) => DateTime.Compare(x.date_spotted, y.date_spotted));

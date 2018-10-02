@@ -29,13 +29,14 @@ namespace WpfApp1
             InitializeComponent();
             myMap.CredentialsProvider = new Microsoft.Maps.MapControl.WPF.ApplicationIdCredentialsProvider(Backend.BackendStuff.KeyRequest());
             myMap.Focus();
+            
             App.ufo_path = Directory.GetCurrentDirectory() + @"/scrubbed.csv";
             try { data = BackendStuff.IntializeUFO(App.ufo_path); }
             catch
             {
                 FilePathWin verifyWindow = new FilePathWin();
                 verifyWindow.Show();
-            }
+            } 
         }
 
         private void btnFind_Click(object sender, RoutedEventArgs e)
