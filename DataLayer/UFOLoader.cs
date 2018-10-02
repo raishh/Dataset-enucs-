@@ -12,14 +12,12 @@ namespace DataLayer
         public DateTime date_spotted;
         public string shape;
         public string duration;
-        public string comment;
 
-        public UFO(DateTime date_spotted, string shape, string duration, string comment, double latitude, double longitude) : base (latitude, longitude)
+        public UFO(DateTime date_spotted, string shape, string duration, double latitude, double longitude) : base (latitude, longitude)
         {
             this.date_spotted = date_spotted;
             this.shape = shape;
             this.duration = duration;
-            this.comment = comment;
         }
 
         public override string ToString()
@@ -43,7 +41,7 @@ namespace DataLayer
                 if (e[9] == "0" || !e[0].Contains("/")) continue;
                 if (e[4].Equals("")) e[4] = "unknown";
 
-                try { UFOData.Add(new UFO(DateTime.Parse(e[0], culture), e[4], e[5], e[7], Double.Parse(e[9]), Double.Parse(e[10]))); } catch { }
+                try { UFOData.Add(new UFO(DateTime.Parse(e[0], culture), e[4], e[5], Double.Parse(e[9]), Double.Parse(e[10]))); } catch { }
             }
 
              UFOData.Sort((x, y) => DateTime.Compare(x.date_spotted, y.date_spotted));
