@@ -46,12 +46,15 @@ namespace WpfApp1
             
             if (i[0] != i[1])
             {
-                Location loc = new Location();
-                Pushpin pin = new Pushpin();
-                loc.Latitude = data[i[0]].latitude;
-                loc.Longitude = data[i[1]].longitude;
-                pin.Location = loc;
-                myMap.Children.Add(pin);
+                for (int x = i[0]; x <= i[1]; x++)
+                {
+                    Location loc = new Location();
+                    Pushpin pin = new Pushpin();
+                    loc.Latitude = data[x].latitude;
+                    loc.Longitude = data[x].longitude;
+                    pin.Location = loc;
+                    myMap.Children.Add(pin);
+                }
             }
         }
 

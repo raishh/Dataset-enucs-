@@ -25,6 +25,24 @@ namespace Backend
             return u.UFOData;
         }
 
+        static int BinarySearchDate(List<DateTime> dt, int l, int r, DateTime x)
+        {
+            if (r >= l)
+            {
+                int mid = l + (r - l) / 2;
+                
+                if (dt[mid].Date == x.Date)
+                    return mid;
+
+                if (dt[mid].Date > x.Date)
+                    return BinarySearchDate(dt, l, mid - 1, x);
+                
+                return BinarySearchDate(dt, mid + 1, r, x);
+            }
+
+            return -1;
+        }
+
         //TO-DO: Allow for ambiguous data (All)
         public static int[] FindDateUFO(List<UFO> list, string day, string month, string year)
         {
@@ -34,12 +52,12 @@ namespace Backend
             foreach (var e in list)
                 dt.Add(e.date_spotted);
 
-            int midIndex = dt.BinarySearch(dateDt.Date);
+            int max = dt.Count - 1;
+            int midIndex = BinarySearchDate(dt, 0, max, dateDt);
             bool rollBack = true;
             bool rollForward = true;
             int si = midIndex - 1;
             int ei = midIndex + 1;
-            int max = dt.Count - 1;
 
             if (midIndex == 0)
             {
