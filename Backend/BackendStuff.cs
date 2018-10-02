@@ -53,8 +53,13 @@ namespace Backend
 
             DateTime dateDt = new DateTime(Convert.ToInt32(year), Convert.ToInt32(month), Convert.ToInt32(day));
 
+
             int max = dt.Count - 1;
             int midIndex = BinarySearchDate(dt, 0, max, dateDt);
+
+            if (midIndex == -1)
+                throw new ArgumentException("Not found");
+
             bool rollBack = true;
             bool rollForward = true;
             int si = midIndex - 1;
@@ -76,7 +81,10 @@ namespace Backend
                 if (si < 0)
                     rollBack = false;
                 else if (dt[si].Date != dt[midIndex].Date)
+                {
                     rollBack = false;
+                    si++;
+                }
                 else
                 {
                     midIndex = si;
@@ -89,7 +97,10 @@ namespace Backend
                 if (ei > max)
                     rollForward = false;
                 else if (dt[ei].Date != dt[midIndex].Date)
+                {
                     rollForward = false;
+                    ei--;
+                }
                 else
                 {
                     midIndex = ei;

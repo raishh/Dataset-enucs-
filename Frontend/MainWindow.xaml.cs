@@ -41,21 +41,23 @@ namespace WpfApp1
 
         private void btnFind_Click(object sender, RoutedEventArgs e)
         {
-
-            //debugging
-            int[] i = BackendStuff.FindDateUFO(data, "10", "10", "1994");
-            
-            if (i[0] != i[1])
+            myMap.Children.Clear();
+            int[] i;
+            try { i = BackendStuff.FindDateUFO(data, cboxDay.Text, cboxMonth.Text, cboxYear.Text); }
+            catch
             {
-                for (int x = i[0]; x <= i[1]; x++)
-                {
-                    Location loc = new Location();
-                    Pushpin pin = new Pushpin();
-                    loc.Latitude = data[x].latitude;
-                    loc.Longitude = data[x].longitude;
-                    pin.Location = loc;
-                    myMap.Children.Add(pin);
-                }
+                MessageBox.Show("There are no UFO sightings under these constraints");
+                return;
+            }
+
+            for (int x = i[0]; x <= i[1]; x++)
+            {
+                Location loc = new Location();
+                Pushpin pin = new Pushpin();
+                loc.Latitude = data[x].latitude;
+                loc.Longitude = data[x].longitude;
+                pin.Location = loc;
+                myMap.Children.Add(pin);
             }
         }
 

@@ -21,8 +21,8 @@
         <ComboBox x:Name="cboxYear" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Width="73" Loaded="cboxYear_Loaded" DropDownClosed="cboxYear_DropDownClosed"/>
         <ComboBox x:Name="cboxMonth" HorizontalAlignment="Left" Margin="11,63,0,0" VerticalAlignment="Top" Width="67" Loaded="cboxMonth_Loaded" DropDownClosed="cboxMonth_DropDownClosed" Grid.Column="1"/>
         <ComboBox x:Name="cboxDay" HorizontalAlignment="Left" Margin="90,63,0,0" VerticalAlignment="Top" Width="52" Loaded="cboxDay_Loaded" Grid.Column="1" RenderTransformOrigin="0.654,0.364" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblShape" Content="Shape" Grid.Column="2" HorizontalAlignment="Left" Margin="145,27,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.196,0.968"/>
-        <ComboBox x:Name="cboxShape" Grid.Column="2" HorizontalAlignment="Left" Margin="136,63,0,0" VerticalAlignment="Top" Width="76" Loaded="cboxShape_Loaded" SelectionChanged="cboxShape_SelectionChanged" ContextMenuClosing="cboxShape_ContextMenuClosing"/>
+        <Label x:Name="lblShape" Content="Shape" Grid.Column="2" HorizontalAlignment="Left" Margin="76,27,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.196,0.968"/>
+        <ComboBox x:Name="cboxShape" Grid.Column="2" HorizontalAlignment="Left" Margin="67,63,0,0" VerticalAlignment="Top" Width="76" Loaded="cboxShape_Loaded" SelectionChanged="cboxShape_SelectionChanged" ContextMenuClosing="cboxShape_ContextMenuClosing"/>
         <m:Map x:Name="myMap" Mode="AerialWithLabels" Grid.ColumnSpan="3" Margin="10,106,10,10"/>
     </Grid>
 </Window>
