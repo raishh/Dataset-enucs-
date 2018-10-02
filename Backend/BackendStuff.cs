@@ -44,15 +44,24 @@ namespace Backend
         }
 
         //TO-DO: Allow for ambiguous data (All)
-        public static int[] FindDateUFO(List<UFO> list, string day, string month, string year)
+        public static int[] FindDateUFO(List<UFO> list, string day, string month, string year, bool allFlag)
         {
             List<DateTime> dt = new List<DateTime>();
+            DateTime dateDt;
+
+            if (!allFlag)
+            {
+                foreach (var e in list)
+                    dt.Add(e.date_spotted);
+                dateDt = new DateTime(Convert.ToInt32(year), Convert.ToInt32(month), Convert.ToInt32(day));
+            }
+            else
+            {
+                foreach (var e in list)
+                    dt.Add(new DateTime(e.date_spotted.Year, e.date_spotted.Month, 1));
+                dateDt = new DateTime(Convert.ToInt32(year), Convert.ToInt32(month), 1);
+            }
             
-            foreach (var e in list)
-                dt.Add(e.date_spotted);
-
-            DateTime dateDt = new DateTime(Convert.ToInt32(year), Convert.ToInt32(month), Convert.ToInt32(day));
-
 
             int max = dt.Count - 1;
             int midIndex = BinarySearchDate(dt, 0, max, dateDt);

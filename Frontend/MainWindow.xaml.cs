@@ -52,15 +52,21 @@ namespace WpfApp1
         {
             myMap.Children.Clear();
             int[] i;
-            try { i = BackendStuff.FindDateUFO(data, cboxDay.Text, cboxMonth.Text, cboxYear.Text); }
+            bool allFlag = false;
+
+            if (cboxDay.Text == "All")
+                allFlag = true;
+
+            try { i = BackendStuff.FindDateUFO(data, cboxDay.Text, cboxMonth.Text, cboxYear.Text, allFlag); }
             catch
             {
                 MessageBox.Show("There are no UFO sightings under these constraints");
                 return;
             }
-
             for (int x = i[0]; x <= i[1]; x++)
             {
+                if (!string.IsNullOrEmpty(cboxShape.Text) && data[x].shape != cboxShape.Text)
+                    continue;
                 Location loc = new Location();
                 Pushpin pin = new Pushpin();
                 loc.Latitude = data[x].latitude;
@@ -93,12 +99,11 @@ namespace WpfApp1
         //Adds default days to ComboBox list
         private void cboxDay_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            cboxDay.Items.Add("All");
             for (int i = 1; i <= 31; i++)
             {
                 cboxDay.Items.Add(i);
             }
-            cboxDay.Items.Add("All");
             
         }
 
