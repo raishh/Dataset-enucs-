@@ -29,7 +29,7 @@ namespace WpfApp1
             InitializeComponent();
             myMap.CredentialsProvider = new Microsoft.Maps.MapControl.WPF.ApplicationIdCredentialsProvider(Backend.BackendStuff.KeyRequest());
             myMap.Focus();
-            
+
             App.ufo_path = Directory.GetCurrentDirectory() + @"/scrubbed.csv";
             try { data = BackendStuff.IntializeUFO(App.ufo_path); }
             catch
@@ -41,6 +41,7 @@ namespace WpfApp1
 
         private void btnFind_Click(object sender, RoutedEventArgs e)
         {
+
             //debugging
             int[] i = BackendStuff.FindDateUFO(data, "10", "10", "1994");
             
@@ -162,6 +163,14 @@ namespace WpfApp1
 
             cboxDay.Items.Add("All");
         }
-        
+
+        private void cboxShape_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void cboxShape_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        {
+        }
     }
 }

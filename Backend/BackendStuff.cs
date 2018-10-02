@@ -39,7 +39,7 @@ namespace Backend
                 
                 return BinarySearchDate(dt, mid + 1, r, x);
             }
-
+            //returns this if not found
             return -1;
         }
 
@@ -47,10 +47,11 @@ namespace Backend
         public static int[] FindDateUFO(List<UFO> list, string day, string month, string year)
         {
             List<DateTime> dt = new List<DateTime>();
-            DateTime dateDt = new DateTime(Convert.ToInt32(year), Convert.ToInt32(month), Convert.ToInt32(day));
-
+            
             foreach (var e in list)
                 dt.Add(e.date_spotted);
+
+            DateTime dateDt = new DateTime(Convert.ToInt32(year), Convert.ToInt32(month), Convert.ToInt32(day));
 
             int max = dt.Count - 1;
             int midIndex = BinarySearchDate(dt, 0, max, dateDt);
