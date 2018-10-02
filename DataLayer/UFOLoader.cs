@@ -41,18 +41,10 @@ namespace DataLayer
             foreach (string[] e in processed_data)
             {
                 if (e[9] == "0" || !e[0].Contains("/")) continue;
+                if (e[4].Equals("")) e[4] = "unknown";
                 try { UFOData.Add(new UFO(DateTime.Parse(e[0], culture), e[4], e[5], e[7], Double.Parse(e[9]), Double.Parse(e[10]))); } catch { }
             }
 
-            string[] tempArr;
-            string swap;
-
-            foreach (UFO item in UFOData)
-            {
-                
-                if (item.shape.Equals(""))
-                    item.shape = "unknown";
-            }
              UFOData.Sort((x, y) => DateTime.Compare(x.date_spotted, y.date_spotted));
         }
     }
