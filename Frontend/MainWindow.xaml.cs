@@ -66,7 +66,7 @@ namespace WpfApp1
             {
                 cboxYear.Items.Add(i);
             }
-            cboxYear.Items.Add("All");
+            
             
         }
         //Adds months to ComboBox list
@@ -76,8 +76,7 @@ namespace WpfApp1
             {
                 cboxMonth.Items.Add(i);
             }
-            cboxMonth.Items.Add("All");
-            
+                        
         }
         
         //Adds default days to ComboBox list
@@ -90,7 +89,6 @@ namespace WpfApp1
             }
             cboxDay.Items.Add("All");
             
-
         }
 
                         
