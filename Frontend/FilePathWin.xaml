@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="FilePathWin" Height="127.311" Width="381.602">
+        Title="FilePathWin" Height="137.978" Width="168.936">
     <Grid>
-        <TextBox x:Name="txtBx" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" Margin="125,39,0,0" TextChanged="TextBox_TextChanged"/>
-        <Label Content="Filepath of UFO CSV:" HorizontalAlignment="Left" Margin="0,35,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnEnter" Content="Enter" HorizontalAlignment="Left" Margin="211,67,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Label Content="Filepath of UFO CSV" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnEnter" Content="Enter" HorizontalAlignment="Left" Margin="42,49,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBlock x:Name="txtBlck" HorizontalAlignment="Left" Margin="55,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

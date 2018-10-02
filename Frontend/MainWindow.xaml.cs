@@ -30,13 +30,22 @@ namespace WpfApp1
             myMap.CredentialsProvider = new Microsoft.Maps.MapControl.WPF.ApplicationIdCredentialsProvider(Backend.BackendStuff.KeyRequest());
             myMap.Focus();
 
-            App.ufo_path = Directory.GetCurrentDirectory() + @"/scrubbed.csv";
+            if (!App.accessed)
+                App.ufo_path = Directory.GetCurrentDirectory() + @"/scrubbed.csv";
+
+            InitializeWindow();
+            
+        }
+
+        public void InitializeWindow()
+        {
             try { data = BackendStuff.IntializeUFO(App.ufo_path); }
             catch
             {
                 FilePathWin verifyWindow = new FilePathWin();
                 verifyWindow.Show();
-            } 
+                Hide();
+            }
         }
 
         private void btnFind_Click(object sender, RoutedEventArgs e)

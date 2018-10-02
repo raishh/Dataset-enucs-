@@ -11,5 +11,6 @@ namespace WpfApp1
     public partial class App : Application
     {
         public static string ufo_path;
+        public static bool accessed = false;
     }
 }

@@ -12,12 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Backend;
+using System.IO;
+using Microsoft.Win32;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Interaction logic for FilePathWin.xaml
-    /// </summary>
     public partial class FilePathWin : Window
     {
         public FilePathWin()
@@ -32,14 +31,30 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            App.ufo_path = txtBx.Text;
-            try { MainWindow.data = BackendStuff.IntializeUFO(App.ufo_path); }
-            catch
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "CSV files (*.csv)|*.csv";
+
+            if (openFileDialog.ShowDialog() == true)
             {
-                MessageBox.Show("Invalid path");
-                return;
+                try
+                {
+                    var csv_reader = new StreamReader(File.OpenRead(openFileDialog.FileName));
+
+                    if (csv_reader == null)
+                        throw new ArgumentNullException("File Path");
+                }
+                catch
+                {
+                    MessageBox.Show("Invalid path");
+                    return;
+                }
+
             }
             
+            App.ufo_path = openFileDialog.FileName;
+            App.accessed = true;
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             Close();
         }
     }
