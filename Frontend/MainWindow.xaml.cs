@@ -65,7 +65,7 @@ namespace WpfApp1
             }
             for (int x = i[0]; x <= i[1]; x++)
             {
-                if (!string.IsNullOrEmpty(cboxShape.Text) && data[x].shape != cboxShape.Text)
+                if (!string.IsNullOrEmpty(cboxShape.Text) && data[x].shape != cboxShape.Text && cboxShape.Text != "All")
                     continue;
                 Location loc = new Location();
                 Pushpin pin = new Pushpin();
