@@ -40,7 +40,18 @@ namespace WpfApp1
 
         private void btnFind_Click(object sender, RoutedEventArgs e)
         {
-            BackendStuff.FindDateUFO(data, "10", "10", "1949");
+            //debugging
+            int[] i = BackendStuff.FindDateUFO(data, "10", "10", "1994");
+            
+            if (i[0] != i[1])
+            {
+                Location loc = new Location();
+                Pushpin pin = new Pushpin();
+                loc.Latitude = data[i[0]].latitude;
+                loc.Longitude = data[i[1]].longitude;
+                pin.Location = loc;
+                myMap.Children.Add(pin);
+            }
         }
 
         //Adds years to ComboBox list

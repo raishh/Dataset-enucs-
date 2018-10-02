@@ -25,6 +25,7 @@ namespace Backend
             return u.UFOData;
         }
 
+        //TO-DO: Allow for ambiguous data (All)
         public static int[] FindDateUFO(List<UFO> list, string day, string month, string year)
         {
             List<DateTime> dt = new List<DateTime>();
