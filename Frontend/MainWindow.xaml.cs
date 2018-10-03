@@ -28,7 +28,6 @@ namespace WpfApp1
         {
             InitializeComponent();
             myMap.CredentialsProvider = new Microsoft.Maps.MapControl.WPF.ApplicationIdCredentialsProvider(Backend.BackendStuff.KeyRequest());
-            myHeatMap.CredentialsProvider = new Microsoft.Maps.MapControl.WPF.ApplicationIdCredentialsProvider(Backend.BackendStuff.KeyRequest());
             myMap.Focus();
 
             if (!App.accessed)
@@ -163,25 +162,7 @@ namespace WpfApp1
         private void cboxShape_ContextMenuClosing(object sender, ContextMenuEventArgs e)
         {
         }
-                
-        private void btnHeatMap_Click(object sender, RoutedEventArgs e)
-        {
-            myHeatMap.Children.Clear();
-            
 
-            if (btnHeatMap.Content.Equals("Heat map"))
-            {
-                myMap.Visibility = Visibility.Hidden;
-                myHeatMap.Visibility = Visibility.Visible;
-                btnHeatMap.Content = "Map";
-
-            }
-            else
-            {
-                myHeatMap.Visibility = Visibility.Hidden;
-                myMap.Visibility = Visibility.Visible;
-                btnHeatMap.Content = "Heat map";
-            }
-        }
+        
     }
 }
