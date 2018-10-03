@@ -24,5 +24,7 @@
         <Label x:Name="lblShape" Content="Shape" Grid.Column="2" HorizontalAlignment="Left" Margin="76,27,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.196,0.968"/>
         <ComboBox x:Name="cboxShape" Grid.Column="2" HorizontalAlignment="Left" Margin="67,63,0,0" VerticalAlignment="Top" Width="76" Loaded="cboxShape_Loaded" SelectionChanged="cboxShape_SelectionChanged" ContextMenuClosing="cboxShape_ContextMenuClosing"/>
         <m:Map x:Name="myMap" Mode="AerialWithLabels" Grid.ColumnSpan="3" Margin="10,106,10,10"/>
+        <Button x:Name="btnHeatMap" Content="Heat map" Grid.Column="2" HorizontalAlignment="Left" Margin="253,13,0,0" VerticalAlignment="Top" Width="75" Click="btnHeatMap_Click" FontSize="14"/>
+        <m:Map x:Name="myHeatMap" Mode="Road"  Grid.ColumnSpan="3" Margin="10,106,10,10" Visibility="Hidden"/>
     </Grid>
 </Window>

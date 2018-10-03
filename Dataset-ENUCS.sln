@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugData", "DebugData\DebugData.csproj", "{FC58CE85-5F5C-43D3-86C4-7F3C545B1728}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Maps.SpatialToolbox.WPF", "..\..\..\Downloads\mapstoolbox\sourceCode\Microsoft.Maps.Spatialtoolbox\Source\Microsoft.Maps.SpatialToolbox.WPF\Microsoft.Maps.SpatialToolbox.WPF.csproj", "{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FC58CE85-5F5C-43D3-86C4-7F3C545B1728}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC58CE85-5F5C-43D3-86C4-7F3C545B1728}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC58CE85-5F5C-43D3-86C4-7F3C545B1728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
